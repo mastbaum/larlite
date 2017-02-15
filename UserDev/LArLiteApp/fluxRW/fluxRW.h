@@ -31,6 +31,10 @@ robertmurrells@gmail.com
 #include "Rtypes.h"
 #include "DataFormat/storage_manager.h"
 
+namespace larlite {
+  class mceventweight;
+}
+
 /**
    \class fluxRW
    User defined class fluxRW ... these comments are used to generate
@@ -52,6 +56,8 @@ robertmurrells@gmail.com
     Double_t get_weight(Double_t energy, Int_t ntype, Int_t ptype);
     
     Double_t event_weight(larlite::storage_manager * storage);
+
+    larlite::event_mceventweight* mcevent_weight(larlite::storage_manager * storage);
     
   private:
     

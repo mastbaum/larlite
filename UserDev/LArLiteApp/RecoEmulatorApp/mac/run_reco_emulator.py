@@ -13,16 +13,16 @@ from larlite import larlite as fmwk
 my_proc = fmwk.ana_processor()
 
 # Set input root file
-for x in xrange(len(sys.argv)-2):
+for x in xrange(len(sys.argv)-3):
     my_proc.add_input_file(sys.argv[x+2])
 
 # Specify IO mode
 my_proc.set_io_mode(fmwk.storage_manager.kBOTH)
 
 # Specify output root file name
-my_proc.set_ana_output_file("ana.root")
+my_proc.set_ana_output_file(sys.argv[3] + "ana.root")
 
-my_proc.set_output_file("out.root")
+my_proc.set_output_file(sys.argv[3] + "out.root")
 
 # Attach an analysis unit ... here we use a base class which does nothing.
 # Replace with your analysis unit if you wish.

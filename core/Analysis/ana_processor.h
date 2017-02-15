@@ -132,8 +132,9 @@ namespace larlite {
     UInt_t _index;             ///< Index of currently processing event
     std::string _ofile_name;   ///< Output file name
     TFile*   _fout;            ///< Output file pointer
+public:
     storage_manager* _storage; ///< Storage manager pointer
-
+private:
     bool _filter_enable;
     bool _ana_unit_status;
     

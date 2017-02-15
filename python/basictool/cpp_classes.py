@@ -8,10 +8,11 @@ libs = [ 'libBasicTool_LArPyBackend',
          'libBasicTool_EMShowerTools',
          'libBasicTool_FhiclLite']
          
+libs=map(lambda x: '/Users/mastbaum/sbn/analysis/lee/larlite/lib/'+x, libs)
 
 ROOT.gErrorIgnoreLevel = ROOT.kFatal
 for l in libs:
-    continue
+    #continue
     val = ROOT.gSystem.Load(l)
     if val < 0:
         warning('Skipping %s' % l)

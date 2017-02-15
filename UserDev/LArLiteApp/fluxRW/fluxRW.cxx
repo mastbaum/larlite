@@ -17,6 +17,7 @@ robertmurrells@gmail.com*/
 #include "TH1D.h"
 #include "DataFormat/mctruth.h"
 #include "DataFormat/mcflux.h"
+#include "DataFormat/mceventweight.h"
 
 
 
@@ -307,5 +308,11 @@ Double_t fluxRW::event_weight(larlite::storage_manager * storage) {
     return weight;
 	
 	}
+
+// Grab MCEventWeights from the truth
+larlite::event_mceventweight* fluxRW::mcevent_weight(larlite::storage_manager * storage) {
+  larlite::event_mceventweight* wgh = storage->get_data<larlite::event_mceventweight>("eventweight");
+  return wgh;
+}
 
 #endif
